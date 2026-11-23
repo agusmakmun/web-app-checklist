@@ -8,11 +8,11 @@ From the first prompt to launch day: security, infrastructure, reliability, lega
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Claude Code plugin](https://img.shields.io/badge/Claude_Code-plugin-D97757)](#option-1-claude-code-skill-recommended)
-[![Checks](https://img.shields.io/badge/checks-252-blue)](skills/go-live-audit/references/checklist.md)
+[![Checks](https://img.shields.io/badge/checks-252-blue)](skills/web-app-checklist/references/checklist.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 [![GitHub stars](https://img.shields.io/github/stars/agusmakmun/web-app-checklist?style=social)](https://github.com/agusmakmun/web-app-checklist)
 
-[**Read the checklist**](skills/go-live-audit/references/checklist.md) · [**Quick start**](#quick-start) · [**What's inside**](#whats-inside) · [**Contributing**](#contributing)
+[**Read the checklist**](skills/web-app-checklist/references/checklist.md) · [**Quick start**](#quick-start) · [**What's inside**](#whats-inside) · [**Contributing**](#contributing)
 
 </div>
 
@@ -34,10 +34,10 @@ This checklist exists so those problems are found **before** real users and real
 
 - **Ordered the way you work.** Plan → build → deploy → pre-launch → launch day → first 30 days. Domain setup comes after the code works, not before.
 - **Prioritized.** 81 🔴 blockers to fix before launch, plus 🟡 week-one items and 🟢 nice-to-haves.
-- **Verifiable.** Items come with a way to check them, and there's a [command cheat sheet](skills/go-live-audit/references/checklist.md#verification-cheat-sheet) for things that live outside the code.
+- **Verifiable.** Items come with a way to check them, and there's a [command cheat sheet](skills/web-app-checklist/references/checklist.md#verification-cheat-sheet) for things that live outside the code.
 - **Architecture-aware.** Different rules for browser-to-database setups (Supabase, Firebase) and backend-only access (self-hosted or managed Postgres).
 - **AI-native.** It covers LLM-specific risks, safe ways of working with coding agents, and ships as a Claude Code skill that audits your codebase with `file:line` evidence.
-- **Sourced.** [References](skills/go-live-audit/references/checklist.md#references) to OWASP, NIST, and vendor documentation for each area.
+- **Sourced.** [References](skills/web-app-checklist/references/checklist.md#references) to OWASP, NIST, and vendor documentation for each area.
 
 ---
 
@@ -96,7 +96,7 @@ An unauthenticated endpoint returns the database connection string, password inc
 Download the checklist into your project:
 
 ```bash
-curl -o LAUNCH_CHECKLIST.md https://raw.githubusercontent.com/agusmakmun/web-app-checklist/main/skills/go-live-audit/references/checklist.md
+curl -o LAUNCH_CHECKLIST.md https://raw.githubusercontent.com/agusmakmun/web-app-checklist/main/skills/web-app-checklist/references/checklist.md
 ```
 
 Then paste this prompt into Claude Code, Cursor, Copilot, or any other coding agent:
@@ -116,7 +116,7 @@ Output a table sorted by priority: BLOCKER failures first.
 
 ### Option 3: Manually
 
-Work through the [checklist](skills/go-live-audit/references/checklist.md) phase by phase. Tick an item only once you've **verified** it with a command, a test, or a screenshot. *"The AI said it's done"* doesn't count.
+Work through the [checklist](skills/web-app-checklist/references/checklist.md) phase by phase. Tick an item only once you've **verified** it with a command, a test, or a screenshot. *"The AI said it's done"* doesn't count.
 
 ---
 
@@ -124,33 +124,33 @@ Work through the [checklist](skills/go-live-audit/references/checklist.md) phase
 
 | Part | # | Phase | Items | 🔴 Blockers |
 |------|---|-------|------:|------------:|
-| **0 · Plan** | 1 | [Plan & Ownership](skills/go-live-audit/references/checklist.md#phase-1-plan--ownership) | 7 | 3 |
-|  | 2 | [Working Safely With AI Coding Agents](skills/go-live-audit/references/checklist.md#phase-2-working-safely-with-ai-coding-agents) | 7 | 3 |
-| **A · Build** | 3 | [Secrets & Configuration](skills/go-live-audit/references/checklist.md#phase-3-secrets--configuration) | 11 | 6 |
-|  | 4 | [Authentication & Authorization](skills/go-live-audit/references/checklist.md#phase-4-authentication--authorization) | 16 | 8 |
-|  | 5 | [Input, Output & File Uploads](skills/go-live-audit/references/checklist.md#phase-5-input-output--file-uploads) | 13 | 7 |
-|  | 6 | [Business Logic & Payments](skills/go-live-audit/references/checklist.md#phase-6-business-logic--payments) | 10 | 3 |
-|  | 7 | [Database](skills/go-live-audit/references/checklist.md#phase-7-database) | 14 | 7 |
-|  | 8 | [AI / LLM-Specific Risks](skills/go-live-audit/references/checklist.md#phase-8-ai--llm-specific-risks) | 8 | 4 |
-|  | 9 | [Dependencies & Supply Chain](skills/go-live-audit/references/checklist.md#phase-9-dependencies--supply-chain) | 7 | 2 |
-|  | 10 | [Code Quality & Testing](skills/go-live-audit/references/checklist.md#phase-10-code-quality--testing) | 11 | 3 |
-|  | 11 | [Product Essentials](skills/go-live-audit/references/checklist.md#phase-11-product-essentials) | 13 | 1 |
-|  | 12 | [UX Polish](skills/go-live-audit/references/checklist.md#phase-12-ux-polish) | 7 | 1 |
-| **B · Deploy** | 13 | [Domain & DNS](skills/go-live-audit/references/checklist.md#phase-13-domain--dns) | 6 | 2 |
-|  | 14 | [Cloud Accounts & Server Hardening](skills/go-live-audit/references/checklist.md#phase-14-cloud-accounts--server-hardening) | 8 | 4 |
-|  | 15 | [Hosting & Serving](skills/go-live-audit/references/checklist.md#phase-15-hosting--serving) | 12 | 5 |
-|  | 16 | [Transport, Headers & API Protection](skills/go-live-audit/references/checklist.md#phase-16-transport-headers--api-protection) | 10 | 4 |
-|  | 17 | [Email Deliverability](skills/go-live-audit/references/checklist.md#phase-17-email-deliverability) | 8 | 5 |
-|  | 18 | [Performance & Scale](skills/go-live-audit/references/checklist.md#phase-18-performance--scale) | 10 | – |
-|  | 19 | [Observability & Monitoring](skills/go-live-audit/references/checklist.md#phase-19-observability--monitoring) | 9 | 3 |
-| **C · Pre-launch** | 20 | [Release Safety](skills/go-live-audit/references/checklist.md#phase-20-release-safety) | 6 | 2 |
-|  | 21 | [Support, Operations & Abuse](skills/go-live-audit/references/checklist.md#phase-21-support-operations--abuse) | 8 | 1 |
-|  | 22 | [Legal & Compliance](skills/go-live-audit/references/checklist.md#phase-22-legal--compliance) | 18 | 7 |
-|  | 23 | [Discoverability (SEO / AEO / GEO)](skills/go-live-audit/references/checklist.md#phase-23-discoverability-seo--aeo--geo) | 8 | – |
-| **Launch** | | [Launch Day Runbook](skills/go-live-audit/references/checklist.md#launch-day-runbook) · [First 72 Hours & 30 Days](skills/go-live-audit/references/checklist.md#after-launch-first-72-hours--first-30-days) | 25 | |
+| **0 · Plan** | 1 | [Plan & Ownership](skills/web-app-checklist/references/checklist.md#phase-1-plan--ownership) | 7 | 3 |
+|  | 2 | [Working Safely With AI Coding Agents](skills/web-app-checklist/references/checklist.md#phase-2-working-safely-with-ai-coding-agents) | 7 | 3 |
+| **A · Build** | 3 | [Secrets & Configuration](skills/web-app-checklist/references/checklist.md#phase-3-secrets--configuration) | 11 | 6 |
+|  | 4 | [Authentication & Authorization](skills/web-app-checklist/references/checklist.md#phase-4-authentication--authorization) | 16 | 8 |
+|  | 5 | [Input, Output & File Uploads](skills/web-app-checklist/references/checklist.md#phase-5-input-output--file-uploads) | 13 | 7 |
+|  | 6 | [Business Logic & Payments](skills/web-app-checklist/references/checklist.md#phase-6-business-logic--payments) | 10 | 3 |
+|  | 7 | [Database](skills/web-app-checklist/references/checklist.md#phase-7-database) | 14 | 7 |
+|  | 8 | [AI / LLM-Specific Risks](skills/web-app-checklist/references/checklist.md#phase-8-ai--llm-specific-risks) | 8 | 4 |
+|  | 9 | [Dependencies & Supply Chain](skills/web-app-checklist/references/checklist.md#phase-9-dependencies--supply-chain) | 7 | 2 |
+|  | 10 | [Code Quality & Testing](skills/web-app-checklist/references/checklist.md#phase-10-code-quality--testing) | 11 | 3 |
+|  | 11 | [Product Essentials](skills/web-app-checklist/references/checklist.md#phase-11-product-essentials) | 13 | 1 |
+|  | 12 | [UX Polish](skills/web-app-checklist/references/checklist.md#phase-12-ux-polish) | 7 | 1 |
+| **B · Deploy** | 13 | [Domain & DNS](skills/web-app-checklist/references/checklist.md#phase-13-domain--dns) | 6 | 2 |
+|  | 14 | [Cloud Accounts & Server Hardening](skills/web-app-checklist/references/checklist.md#phase-14-cloud-accounts--server-hardening) | 8 | 4 |
+|  | 15 | [Hosting & Serving](skills/web-app-checklist/references/checklist.md#phase-15-hosting--serving) | 12 | 5 |
+|  | 16 | [Transport, Headers & API Protection](skills/web-app-checklist/references/checklist.md#phase-16-transport-headers--api-protection) | 10 | 4 |
+|  | 17 | [Email Deliverability](skills/web-app-checklist/references/checklist.md#phase-17-email-deliverability) | 8 | 5 |
+|  | 18 | [Performance & Scale](skills/web-app-checklist/references/checklist.md#phase-18-performance--scale) | 10 | – |
+|  | 19 | [Observability & Monitoring](skills/web-app-checklist/references/checklist.md#phase-19-observability--monitoring) | 9 | 3 |
+| **C · Pre-launch** | 20 | [Release Safety](skills/web-app-checklist/references/checklist.md#phase-20-release-safety) | 6 | 2 |
+|  | 21 | [Support, Operations & Abuse](skills/web-app-checklist/references/checklist.md#phase-21-support-operations--abuse) | 8 | 1 |
+|  | 22 | [Legal & Compliance](skills/web-app-checklist/references/checklist.md#phase-22-legal--compliance) | 18 | 7 |
+|  | 23 | [Discoverability (SEO / AEO / GEO)](skills/web-app-checklist/references/checklist.md#phase-23-discoverability-seo--aeo--geo) | 8 | – |
+| **Launch** | | [Launch Day Runbook](skills/web-app-checklist/references/checklist.md#launch-day-runbook) · [First 72 Hours & 30 Days](skills/web-app-checklist/references/checklist.md#after-launch-first-72-hours--first-30-days) | 25 | |
 | | | **Total** | **252** | **81** |
 
-Also included: a [Verification Cheat Sheet](skills/go-live-audit/references/checklist.md#verification-cheat-sheet) of ready-to-run `curl`, `dig`, `gitleaks` and `nc` checks, and a curated list of [References](skills/go-live-audit/references/checklist.md#references).
+Also included: a [Verification Cheat Sheet](skills/web-app-checklist/references/checklist.md#verification-cheat-sheet) of ready-to-run `curl`, `dig`, `gitleaks` and `nc` checks, and a curated list of [References](skills/web-app-checklist/references/checklist.md#references).
 
 ### Priority levels
 
@@ -180,7 +180,7 @@ Also included: a [Verification Cheat Sheet](skills/go-live-audit/references/chec
 ├── .claude-plugin/
 │   ├── plugin.json               # Claude Code plugin manifest
 │   └── marketplace.json          # marketplace entry for /plugin install
-└── skills/go-live-audit/
+└── skills/web-app-checklist/
     ├── SKILL.md                  # the audit skill
     └── references/
         └── checklist.md          # the checklist (single source of truth)
@@ -190,9 +190,9 @@ Also included: a [Verification Cheat Sheet](skills/go-live-audit/references/chec
 
 Contributions are welcome, especially items that come from real incidents.
 
-1. Edit [`checklist.md`](skills/go-live-audit/references/checklist.md) in the right phase.
+1. Edit [`checklist.md`](skills/web-app-checklist/references/checklist.md) in the right phase.
 2. Give each new item a **priority tag**, a **one-line why**, and, where possible, a way to **verify** it.
-3. If the item has a high-signal code pattern, add it to the search table in [`SKILL.md`](skills/go-live-audit/SKILL.md) too.
+3. If the item has a high-signal code pattern, add it to the search table in [`SKILL.md`](skills/web-app-checklist/SKILL.md) too.
 4. Open a PR describing the failure it prevents.
 
 ## License

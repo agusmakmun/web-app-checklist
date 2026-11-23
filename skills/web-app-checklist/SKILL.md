@@ -1,5 +1,5 @@
 ---
-name: go-live-audit
+name: web-app-checklist
 description: Audit a codebase for production / go-live readiness against a 250-item checklist covering secrets, auth & RBAC, input handling, business logic & payments, database access (RLS vs backend), AI/LLM risks, dependencies, hosting, HTTPS & headers, email, observability, release safety, legal and SEO. Every item is marked PASS / FAIL / N/A / CANNOT VERIFY with file:line evidence. Use this whenever the user asks if their app is ready to launch, ship, deploy or go live, wants a pre-launch / pre-production / security audit or readiness review, mentions a vibe-coded or AI-built app they're about to release, or asks "what am I missing before launch", even if they don't say "checklist" or "audit".
 ---
 
