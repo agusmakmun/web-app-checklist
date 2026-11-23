@@ -1,0 +1,14 @@
+{
+  "name": "web-app-checklist",
+  "owner": {
+    "name": "Agus Makmun"
+  },
+  "description": "Go-live readiness audit for web apps built with AI agents.",
+  "plugins": [
+    {
+      "name": "web-app-checklist",
+      "source": "./",
+      "description": "Audit a codebase for go-live readiness: security, infrastructure, reliability, legal and SEO, with file:line evidence for every item."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "web-app-checklist",
+  "description": "Audit a codebase for go-live readiness: security, infrastructure, reliability, legal and SEO, with file:line evidence for every item.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Agus Makmun"
+  },
+  "homepage": "https://github.com/agusmakmun/web-app-checklist",
+  "repository": "https://github.com/agusmakmun/web-app-checklist",
+  "license": "MIT",
+  "keywords": ["security", "checklist", "production-readiness", "owasp", "launch"]
+}
